@@ -24,9 +24,30 @@ void printArray(int numbers[], int size)
 	}
 }
 
+
+
 int main()
 {
-	Character player;
+	//Two ways to intialize players
+	Character player(150, 50);
+	Character player2 = Character(200, 5);
+
+
+	//Printing address of the num variable
+	int num = 40;
+
+	int* numPtr = &num;
+
+	int* numPtr2 = numPtr;
+
+	std::cout << *numPtr2 << std::endl;
+
+	int test = 132;
+	int* numberPtr = &test;
+	int* numberPtr2 = numberPtr;
+
+	std::cout << *numberPtr2;
+
 
 	return 0;
 }
