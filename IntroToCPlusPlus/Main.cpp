@@ -24,14 +24,35 @@ void printArray(int numbers[], int size)
 	}
 }
 
+/// <summary>
+/// Create a function for a character creation menu
+/// The function should ask the player to input a health and damage value
+/// Create a new dynamically allocated character with the given stats
+/// Print the Character's stats in the main function
+/// </summary>
 
+Character characterCreation()
+{
+	float health = 0;
+	float damage = 0;
+
+	std::cout << "Please input your health" << std::endl;
+	std::cin >> health;
+
+	std::cout << "Please input your damage" << std::endl;
+	std::cin >> damage;
+
+	Character* character = new Character(health, damage);
+	return *character;
+}
 
 int main()
 {
 	//Two ways to intialize players
-	Character player(150, 50);
-	Character player2 = Character(200, 5);
+	Character player(150, 300, 50);
+	Character player2 = Character(200, 500, 5);
 
+	Character* playerPtr = &player;
 
 	//Printing address of the num variable
 	int num = 40;
@@ -46,7 +67,9 @@ int main()
 	int* numberPtr = &test;
 	int* numberPtr2 = numberPtr;
 
-	std::cout << *numberPtr2;
+	std::cout << *numberPtr2 << std::endl;
+
+	playerPtr->printStats();
 
 
 	return 0;
